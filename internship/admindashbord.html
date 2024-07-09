@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    margin: 0;
+    flex-grow: 1;
+}
+
+.logout-container {
+    display: inline-block;
+}
+
+.logout-btn {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.logout-btn:hover {
+    background-color: #0056b3;
+}
+
+.dashboard-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.supervisors-table-container, .students-table-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+h2 {
+    margin-top: 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+.table-actions {
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.delete-btn {
+    background-color: #dc3545;
+}
+
+.delete-btn:hover {
+    background-color: #c82333;
+}
+
+</style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Admin Dashboard <span class="logout-container"><a href="logout.php" class="logout-btn">LogOut</a></span></h1>
+    </header>
+    <div class="dashboard-container">
+        <div class="supervisors-table-container">
+            <h2>Supervisors Information</h2>
+            <div class="table-actions">
+                <button id="addSupervisorBtn">Add Supervisor</button>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Supervisor ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Department</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>SUP12345</td>
+                        <td>Dr. Alice Johnson</td>
+                        <td>alice.johnson@university.edu</td>
+                        <td>Computer Science</td>
+                        <td><button class="delete-btn">Delete</button></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>SUP12346</td>
+                        <td>Dr. Bob Smith</td>
+                        <td>bob.smith@university.edu</td>
+                        <td>Mathematics</td>
+                        <td><button class="delete-btn">Delete</button></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>SUP12347</td>
+                        <td>Dr. Carol Lee</td>
+                        <td>carol.lee@university.edu</td>
+                        <td>Physics</td>
+                        <td><button class="delete-btn">Delete</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="students-table-container">
+            <h2>Students Information</h2>
+            <div class="table-actions">
+                <button id="addStudentBtn">Add Student</button>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Student ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Campus</th>
+                        <th>Registration No</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>STU12345</td>
+                        <td>John Doe</td>
+                        <td>john.doe@student.university.edu</td>
+                        <td>Main Campus</td>
+                        <td>123456</td>
+                        <td><button class="delete-btn">Delete</button></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>STU12346</td>
+                        <td>Jane Smith</td>
+                        <td>jane.smith@student.university.edu</td>
+                        <td>North Campus</td>
+                        <td>654321</td>
+                        <td><button class="delete-btn">Delete</button></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>STU12347</td>
+                        <td>Bob Brown</td>
+                        <td>bob.brown@student.university.edu</td>
+                        <td>South Campus</td>
+                        <td>789012</td>
+                        <td><button class="delete-btn">Delete</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
